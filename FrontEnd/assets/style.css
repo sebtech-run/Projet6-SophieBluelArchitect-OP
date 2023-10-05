@@ -180,6 +180,11 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+.navig a {
+	text-decoration: none;
+	color: #3D3D3D;
+}
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
@@ -203,7 +208,90 @@ footer nav ul {
 	padding: 7px 20px 7px 20px;
 	margin-top: 30px;
 	cursor: pointer;
-
-
 }
 
+/* login */
+
+.bodylogin {
+	background-color: #FFFEF8;
+}
+
+.formulaire {
+	display: flex;
+	width: 400px;
+	height: 330px;
+	margin: auto;
+	justify-content: center;
+}
+
+.form-title h2 {
+	justify-content: center;
+	display: flex;
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
+}
+
+.email {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.email label {
+	font-family: 'Work Sans';
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	margin-bottom: 2px;
+	color: #3D3D3D;
+}
+
+.email input {
+	width: 300px;
+	height: 30px;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09)
+}
+
+.motdepasse {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.motdepasse label {
+	font-family: 'Work Sans';
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	margin-bottom: 2px;
+	color: #3D3D3D;
+}
+
+.motdepasse input {
+	width: 300px;
+	height: 30px;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09)
+}
+
+.button {
+	text-align: center;
+}
+
+.motdepasseoublie {
+	text-align: center;
+}
+
+.motdepasseoublie p {
+	font-family: 'Work Sans';
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	color: #3D3D3D;
+}
