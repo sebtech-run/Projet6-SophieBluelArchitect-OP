@@ -1,6 +1,6 @@
-//Appel fetch de mon API
-
 const works = []
+const imagesContainer = document.querySelector('.gallery')
+
 fetch('http://localhost:5678/api/works')
 .then((response) => response.json())
 .then((data) => {
@@ -10,8 +10,6 @@ fetch('http://localhost:5678/api/works')
         imagesContainer.appendChild(figure)
     })
 })
-
-const imagesContainer = document.querySelector('.gallery')
 
 //Function qui crée toutes les balises et cible des valeurs pour le DOM
 
@@ -34,6 +32,16 @@ function createAllBalise(work) {
 fetch('http://localhost:5678/api/categories')
 .then((response) => response.json())
 .then((data) => {
+    const btnAll = document.getElementById('btnTous')
+    btnAll.addEventListener("click", function() {
+        imagesContainer.innerHTML=''
+        works.forEach(work => {
+            const figure = createAllBalise(work)
+            imagesContainer.appendChild(figure)
+        })
+    })
+    document.querySelector('.filters').appendChild(btnAll)
+
     data.forEach((categorie) => {
         const button = document.createElement('button')
         button.innerText = categorie.name
@@ -49,8 +57,17 @@ fetch('http://localhost:5678/api/categories')
         })
         document.querySelector('.filters').appendChild(button)
     })
-}
-)
+
+    const boutons = document.querySelectorAll('.button-filter')
+    boutons.forEach((bouton) => {
+        bouton.addEventListener('click', function(){
+            boutons.forEach((bouton) => {
+                bouton.classList.remove('btn-selected')
+            })
+            bouton.classList.add('btn-selected')
+        })
+    })
+})
 
 
 

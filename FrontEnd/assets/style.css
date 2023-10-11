@@ -210,6 +210,11 @@ footer nav ul {
 	cursor: pointer;
 }
 
+.btn-selected {
+	background-color: #1D6154;
+	color: white
+}
+
 /* login */
 
 .bodylogin {
@@ -294,4 +299,9 @@ footer nav ul {
 	font-size: 14px;
 	line-height: 16px;
 	color: #3D3D3D;
+}
+
+.submitBtn {
+	padding: 7px 25px 7px 25px;
+	cursor: pointer
 }
