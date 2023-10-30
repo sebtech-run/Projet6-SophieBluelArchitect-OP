@@ -135,6 +135,8 @@ li:hover {
 
 .gallery img {
 	width: 100%;
+	height: 100%;
+	object-fit: cover;
 
 }
 #contact {
@@ -180,16 +182,19 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
-.navig a {
-	text-decoration: none;
-	color: #3D3D3D;
-}
-
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 2em;
 }
+
+.navig a {
+	text-decoration: none;
+	color: #3D3D3D;
+
+}
+
+/* filtres */
 
 .filters {
 	display: flex;
@@ -198,35 +203,42 @@ footer nav ul {
 	gap: 10px;
 }
 
-.button-filter {
+.button-filter{
 	font-family: 'Syne';
 	font-size: 16px;
 	color: #1D6154;
 	background-color: white;
+	border-color: #1D6154;
 	border-width: 1px;
-	border-radius: 60px;
+	border-radius: 60px ;
 	padding: 7px 20px 7px 20px;
 	margin-top: 30px;
-	cursor: pointer;
+	cursor: pointer;	
 }
 
 .btn-selected {
 	background-color: #1D6154;
-	color: white
+	color: white ;
 }
 
-/* login */
+
+
+
+/* page login */
 
 .bodylogin {
 	background-color: #FFFEF8;
+	
 }
 
 .formulaire {
 	display: flex;
 	width: 400px;
 	height: 330px;
-	margin: auto;
 	justify-content: center;
+	
+	margin: auto;
+	
 }
 
 .form-title h2 {
@@ -240,14 +252,14 @@ footer nav ul {
 }
 
 .email {
+	justify-content: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	margin-top: 30px;
 }
 
 .email label {
-	font-family: 'Work Sans';
+	font-family: 'Work Sans'; 
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 16px;
@@ -259,34 +271,43 @@ footer nav ul {
 	width: 300px;
 	height: 30px;
 	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09)
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
 .motdepasse {
+	justify-content: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	margin-top: 30px;
+
 }
 
 .motdepasse label {
-	font-family: 'Work Sans';
+	font-family: 'Work Sans'; 
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 16px;
 	margin-bottom: 2px;
 	color: #3D3D3D;
+
 }
 
 .motdepasse input {
 	width: 300px;
 	height: 30px;
 	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09)
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+
 }
 
 .button {
 	text-align: center;
+	
+}
+
+.submitBtn {
+	padding: 7px 25px 7px 25px;
+	cursor: pointer;
 }
 
 .motdepasseoublie {
@@ -294,14 +315,298 @@ footer nav ul {
 }
 
 .motdepasseoublie p {
-	font-family: 'Work Sans';
+	font-family: 'Work Sans'; 
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 16px;
 	color: #3D3D3D;
+	
+
 }
 
-.submitBtn {
-	padding: 7px 25px 7px 25px;
-	cursor: pointer
+.footerlogin {
+	background-color: white;
+	
 }
+
+.footerlogin .lifooter {
+	font-size: 15px ;
+}
+
+#logout{
+	display: none;
+}
+
+#portfolio-modify{
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+}
+#portfolio-modify i{
+	margin-left: 30px;
+	font-size: 1.2em;
+}
+
+/* MODAL */
+
+#myModal {
+	display: none; 
+	position: fixed; 
+	z-index: 1; 
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%; 
+	height: 100%; 
+	overflow: auto; 
+	background-color: rgb(255, 255, 255);
+	background-color: rgba(0,0,0,0.4); 
+	
+  }
+
+  #modal-content {
+	text-align: center;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #fff;
+	padding: 20px;
+	border: 1px solid #888;
+	border-radius: 10px;
+	width: 80%;
+	max-width: 650px;
+	max-height: 670px;
+	margin: 15% auto;
+	padding-bottom: 50px;
+	
+  }
+
+  #modal-content h2 {
+	font-family: 'Work Sans';
+	font-weight: 400;
+	font-size: 26px;
+	line-height: 30px;
+	color: black;
+  }
+
+  #modal-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, auto);
+	grid-row-gap: 20px;
+	grid-column-gap: 10px;
+	margin: 40px 80px 0px 80px;
+	padding-bottom: 30px;
+	border-bottom: solid 2px #d0d0d0;
+  }
+
+  #modal-container figure {
+    position: relative;
+	height: 135px;
+}
+
+#modal-container figure i {
+	position: absolute;
+	color: white;
+    top: 3px;
+    right: 3px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    padding: 4px;
+    background-color: black;
+    border: none;
+	border-radius: 5px;
+}
+  
+  #modal-container img {
+    width: 100%;
+	height: 100%;
+	object-fit: cover;
+  }
+
+   #modal-close  {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 10px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+	
+}
+
+#modal-close i {
+	font-size: 1.3em;
+	display: block;
+	
+  }
+
+#modal-ajout {
+	font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background-color: #1D6154;
+    padding: 10px 25px 10px 25px;
+    width: 230px;
+    text-align: center;
+    border-radius: 60px;
+    margin-top: 30px;
+	cursor: pointer;
+}
+
+.alert {
+	color: red;
+	text-align: center;
+	padding-top: 10px;
+}
+
+#modal-photo {
+	display: none;
+	background-color: #fff;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	border-radius: 10px;
+	width: 80%;
+	max-width: 650px;
+	text-align: center;
+	position: relative;
+	max-height: 660px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+
+  #iModalImage {
+	color: #c5c6c9;
+  }
+
+  #image {
+	display: none;
+  }
+
+  #modal-return {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	background: none;
+	border: none;
+	padding: 0;
+  }
+
+  #modal-return i {
+	font-size: 1.3em;
+	display: block;
+  }
+
+  #modal-photo-close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	background: none;
+	border: none;
+	padding: 0;
+  }
+
+  #modal-photo-close i {
+	font-size: 1.3em;
+	display: block;
+  }
+
+  #modal-photo h2{
+	color: black;
+	margin-top: 20px;
+	font-weight: lighter;
+  }
+
+  #modal-photo form{
+	display: flex;
+	flex-direction: column;
+	padding: 30px 100px 30px 100px
+  }
+
+  #form-photo-div{
+	height: 180px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+	background-color: #e8f1f6;
+  }
+  #form-photo-div i{
+	font-size: 4.5em;
+  }
+
+  #label-image{
+	padding: 13px 30px 13px 30px;
+	background-color: #cbd6dc;
+	border-radius: 25px;
+	color: #376b89;
+	margin-top: 17px;
+	cursor: pointer;
+  }
+
+  #form-photo-div p {
+	font-size: 0.9em;
+	color: #575859;
+	margin-top: 7px;
+  }
+
+  .modal-photo-input{
+	display: flex;
+	flex-direction: column;
+	margin-top: 25px;
+	align-items: start;
+  }
+
+  #modal-photo-category, #modal-photo-title{
+	width: 100%;
+    height: 37px;
+    box-shadow: 0px 0px 15px rgb(233, 233, 228);
+    border-width: 0px;
+    margin-top: 10px;
+	
+  }
+
+  #barre-grise{
+	padding-bottom: 45px;
+	border-bottom: solid 2px #d0d0d0;
+  }
+
+  #modal-valider{
+	font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background-color: #6f717099;
+    padding: 10px 25px 10px 25px;
+    width: 230px;
+	border-width: 0px;
+    text-align: center;
+    border-radius: 60px;
+    margin-top: 30px;
+	cursor: pointer;
+  }
+
+  .alert-add-work{
+	
+	color: red;
+	padding-top: 10px;
+  }
+
+
+
+
+
+
+

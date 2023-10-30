@@ -13,12 +13,20 @@
 </head>
 <body class="bodylogin">
 <header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
-	<nav>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+	<!-- <nav>
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li>login</li>
+			<li><a href="index.html" class="linavig">projets</a></li>
+			<li><a href="index.html#contact">contact</a></li>
+			<li><a href="#">login</a></li>
+			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+		</ul>
+	</nav> -->
+    <nav class="navig">
+		<ul>
+			<a href="index.html"><li class="linavig">projets</li></a>
+			<a href="index.html#contact"><li class="linavig">contact</li></a>
+			<a href="#"><li class="linavig" id="login">login</li></a>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -27,7 +35,7 @@
 <main>
 
    <section>
-    <form class="formulaire" name="formulaire" action="#" method="#">
+    <form class="formulaire" name="formulaire" action="" method="post">
 
         <div class="col">
             <div class="form-title">
@@ -35,12 +43,13 @@
             </div>
             <div class="email">
                 <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="email" id="email">
             </div>
             <div class="motdepasse">
                 <label for="password">Mot de passe</label>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password">
             </div>
+            <p class="alert"></p>
             <div class="button">
                 <input class="submitBtn" type="submit" id="submitUserInfo" value="Se connecter">
             </div>
@@ -50,9 +59,7 @@
         </div>
     </form>
    </section>
-
-  
-    
+ 
 </main>
 
 <footer class="footerlogin">
@@ -63,6 +70,6 @@
     </nav>
 </footer>
 
-<script src="./assets/js/login.js"></script>
+<script src="./assets/login.js"></script>
 </body>
 </html>
