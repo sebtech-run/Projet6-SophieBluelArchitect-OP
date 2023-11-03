@@ -605,6 +605,32 @@ footer nav ul {
   }
 
 
+/*admin*/
+
+#admin-logged{
+	width: 100%;
+	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 0px;
+	height: 50px;
+}
+
+#logo-edition{
+	display: flex;
+	align-items: baseline;
+}
+
+#admin-logged i{
+	font-size: 1.1em;
+	color: white;
+
+}
+#admin-logged p{
+	color: white;
+	margin-left: 5px;
+}
 
 
 

@@ -94,13 +94,16 @@ const loginStatus = document.getElementById("login")
 const logoutStatus = document.getElementById("logout")
 const portfolioModify = document.getElementById("portfolio-filter-modify")
 const filtreModify = document.querySelector('.filters')
+const modeEdition = document.getElementById("admin-logged")
 
 if (JSON.parse(localStorage.getItem("isConnected"))) {
+  modeEdition.style.display = "flex"
   loginStatus.style.display = 'none'
   logoutStatus.style.display = 'block'
   portfolioModify.style.display = 'flex'
   filtreModify.style.display = 'none'   
 } else {
+  modeEdition.style.display = "none"
   loginStatus.style.display = 'block'
   logoutStatus.style.display = 'none'
   portfolioModify.style.display = 'none'
@@ -250,6 +253,17 @@ function addNewWork(event) {
     galleryModal.appendChild(figureModal)
   
     alert('Le nouveau work a été ajouté avec succés.')
+
+    document.getElementById("image").style.display= "none"
+    document.getElementById('modal-photo-title').value=""
+    document.getElementById('modal-photo-category').value=""
+    labelImage.style.display = "initial"
+    pImage.style.display = "initial"
+    
+    iModalImage.style.display = "initial"
+    document.getElementById("imgUpload").remove() 
+  
+    submitButton.style.backgroundColor = ''
   })
   .catch(error => console.error(error))
 }
@@ -268,6 +282,7 @@ inputImage.addEventListener("change", function () {
   imgPreview.src = URL.createObjectURL(selectedImage);
   imgPreview.style.maxHeight = "100%";
   imgPreview.style.width = "auto";
+  imgPreview.id = "imgUpload"
 
   labelImage.style.display = "none";
   pImage.style.display = "none";
@@ -275,6 +290,26 @@ inputImage.addEventListener("change", function () {
   iModalImage.style.display = "none";
   document.getElementById("form-photo-div").appendChild(imgPreview);
 });
+
+// chargement de la couleur du boutton 
+
+const titleInput = document.getElementById('modal-photo-title')
+const categorySelect = document.getElementById('modal-photo-category')
+const imageInput = document.getElementById('image')
+const submitButton = document.getElementById('modal-valider')
+
+function checkForm() {
+  if (titleInput.value !== '' && categorySelect.value !== '' && imageInput.value !== '') {
+    submitButton.style.backgroundColor = '#1D6154'
+  } else {
+    submitButton.style.backgroundColor = ''
+    }
+  }
+
+titleInput.addEventListener('input', checkForm)
+categorySelect.addEventListener('change', checkForm)
+imageInput.addEventListener('change', checkForm)
+
 
 
 
